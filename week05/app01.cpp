@@ -18,8 +18,7 @@ int main()
     int kid = 5000, adult = 10000, senior = 7000;
 
     for (int i = 0; i < humans; i++) {
-        //cout << *(ages + i) << '\n';
-        age = *(ages + i);
+        age = ages[i];  // 포인터는 배열처럼 배열은 포인터처럼 사용 가능
         if (age >= 65)
             totalPrice = totalPrice + senior;
         else if(age >= 19)
