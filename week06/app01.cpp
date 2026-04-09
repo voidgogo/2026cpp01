@@ -60,9 +60,9 @@ inline void Circle::setRadius(double value)
     radius = value;
 }
 
-Circle circle5;  // global object
+Circle circle5(50.0);  // global object
 
-void test() {
+Circle* test() {
     Circle circle6(2.0);
     Circle* circle7 = new Circle(circle6);  // allocate heap memory
 
@@ -73,8 +73,9 @@ void test() {
     cout << (*circle7).getRadius() << '\n';
     cout << circle7->getRadius() << '\n';
 
-    delete circle7; // free heap memory
+    //delete circle7; // free heap memory
     cout << Circle::getCount() << "개\n";
+    return circle7;
 }
 
 int main()
@@ -89,7 +90,10 @@ int main()
 
     cout << Circle::getCount() << "개\n";
 
-    test();
+    Circle* circle8 = test();
+    cout << circle8->getRadius() << '\n';
+    cout << circle8->getArea() << '\n';
+    delete circle8;
 
     cout << Circle::getCount() << "개\n";
 
