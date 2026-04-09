@@ -27,7 +27,7 @@ public:
         radius = c.radius;
         count++;
     }
-
+    // destructor
     ~Circle() {
         cout << this << "원 객체 소멸\n";
         count--;
@@ -67,6 +67,12 @@ void test() {
     Circle* circle7 = new Circle(circle6);  // allocate heap memory
 
     cout << Circle::getCount() << "개\n";
+
+    cout << circle6.getRadius() << '\n';
+    //cout << circle7.getRadius() << '\n';  // error. circle7은 객체가 아닌 지역 포인터 변수
+    cout << (*circle7).getRadius() << '\n';
+    cout << circle7->getRadius() << '\n';
+
     delete circle7; // free heap memory
     cout << Circle::getCount() << "개\n";
 }
