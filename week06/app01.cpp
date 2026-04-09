@@ -94,6 +94,7 @@ int main()
     cout << circle8->getRadius() << '\n';
     cout << circle8->getArea() << '\n';
     delete circle8;
+    circle8 = nullptr;
 
     cout << Circle::getCount() << "개\n";
 
