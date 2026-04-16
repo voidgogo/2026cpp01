@@ -93,8 +93,8 @@ int main()
     Circle* circle8 = test();
     cout << circle8->getRadius() << '\n';
     cout << circle8->getArea() << '\n';
-    delete circle8;
-    circle8 = nullptr;
+    delete circle8;  // 힙메모리에 할당된 객체를 삭제 (소멸자 동작)
+    circle8 = nullptr;  // 포인터가 가지고 있던 힙메모리 번지 주소를 0으로 초기화
 
     cout << Circle::getCount() << "개\n";
 
