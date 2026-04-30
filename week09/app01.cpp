@@ -10,6 +10,9 @@ int main() {
 	//char s1[] = "ACE";
 
 	char s1[] = { 'A', 'C', NULL, 'E' };
+	//const char s1[] = { 'A', 'C', NULL, 'E' };  // read only
+	cout << s1 << '\n';
+	s1[2] = 'D';
 	cout << s1 << '\n';
 
 	return 0;
