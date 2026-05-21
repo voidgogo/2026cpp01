@@ -4,9 +4,10 @@ using namespace std;
 class Pokemon
 {
 private:
+//protected:
     int hp;
 public:
-    void setHp(int hp) {
+    void set(int hp) {
         this->hp = hp;
     }
     int getHp() const {
@@ -18,8 +19,16 @@ class Pikachu : public Pokemon  // is-a
 private:
     int electricAttack;
 public:
-    void setElectricAttack(int electricAttack) {
+    void set(int hp) {
+        Pokemon::set(hp);  // Delegation
+    }
+    void set(int hp, int electricAttack) {
+        //this->hp = hp;
+        Pokemon::set(hp);  // Delegation
         this->electricAttack = electricAttack;
+        // private
+        //this->hp = 99;
+        //hp = 99;
     }
     int getElectricAttack() const {
         return electricAttack;
@@ -28,12 +37,13 @@ public:
 int main()
 {
     Pokemon Pokemon;
-    Pokemon.setHp(100);
+    Pokemon.set(100);
     cout << Pokemon.getHp();
     cout << endl << endl;
     Pikachu Pikachu;
-    Pikachu.setHp(150);
-    Pikachu.setElectricAttack(1000);
+    Pikachu.set(150);
+    cout << Pikachu.getHp() << endl;
+    Pikachu.set(200, 1000);
     cout << Pikachu.getHp() << endl;
     cout << Pikachu.getElectricAttack();
     return 0;
