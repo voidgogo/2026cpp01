@@ -4,9 +4,20 @@ using namespace std;
 class Pokemon
 {
 private:
-//protected:
     int hp;
 public:
+    Pokemon() : hp(1) {
+
+    }
+    //Pokemon(int hp) {
+    //    this->hp = hp;
+    //}
+    Pokemon(int hp) : hp(hp) {
+
+    }
+    Pokemon(const Pokemon& pokemon) : hp(pokemon.hp) {
+
+    }
     void set(int hp) {
         this->hp = hp;
     }
@@ -19,16 +30,21 @@ class Pikachu : public Pokemon  // is-a
 private:
     int electricAttack;
 public:
-    void set(int hp) {
+    Pikachu() : Pokemon(), electricAttack(10){  // Invocation
+
+    }
+    Pikachu(int hp, int electricAttack) : Pokemon(hp), electricAttack(electricAttack) {// Invocation
+
+    }
+    Pikachu(const Pikachu& pikachu) : Pokemon(pikachu), electricAttack(pikachu.electricAttack) {// Invocation
+
+    }
+        void set(int hp) {
         Pokemon::set(hp);  // Delegation
     }
     void set(int hp, int electricAttack) {
-        //this->hp = hp;
         Pokemon::set(hp);  // Delegation
         this->electricAttack = electricAttack;
-        // private
-        //this->hp = 99;
-        //hp = 99;
     }
     int getElectricAttack() const {
         return electricAttack;
@@ -36,15 +52,17 @@ public:
 };
 int main()
 {
-    Pokemon Pokemon;
-    Pokemon.set(100);
-    cout << Pokemon.getHp();
-    cout << endl << endl;
-    Pikachu Pikachu;
-    Pikachu.set(150);
-    cout << Pikachu.getHp() << endl;
-    Pikachu.set(200, 1000);
-    cout << Pikachu.getHp() << endl;
-    cout << Pikachu.getElectricAttack();
+    //Pikachu Pikachu;   // default
+    //cout << Pikachu.getHp() << endl;
+    //cout << Pikachu.getElectricAttack();
+
+    Pikachu pikachu(500, 4000);  // parameter
+    cout << pikachu.getHp() << endl;
+    cout << pikachu.getElectricAttack() << endl;
+
+    Pikachu pikachu2(pikachu);  // copy
+    cout << pikachu2.getHp() << endl;
+    cout << pikachu2.getElectricAttack() << endl;
+
     return 0;
 }
