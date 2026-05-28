@@ -1,9 +1,9 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include "pokemon.h"
+#include "pikachu.h"
 
 int main()
 {
+    Pokemon p;
     //Pikachu pikachu;   // default
     //cout << pikachu.getHp() << endl;
     //cout << pikachu.getElectricAttack();

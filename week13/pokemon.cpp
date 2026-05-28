@@ -1,3 +1,5 @@
+#include "pokemon.h"
+
 Pokemon::Pokemon() : hp(1) {
 }
 Pokemon::Pokemon(int hp) : hp(hp) {

@@ -1,4 +1,5 @@
 #pragma once
+#include "pokemon.h"
 
 class Pikachu : public Pokemon  // is-a
 {
