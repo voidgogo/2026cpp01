@@ -1,10 +1,11 @@
-#include "pokemon.h"
-#include "pokemon.h"  // duplicated code
 #include "pikachu.h"
+#include "squirtle.h"
 
 int main()
 {
-    Pokemon p;
+    Squirtle squirtle(1000, 3000);
+    cout << squirtle.getHydroAttack() << endl;
+    
     //Pikachu pikachu;   // default
     //cout << pikachu.getHp() << endl;
     //cout << pikachu.getElectricAttack();
