@@ -1,4 +1,5 @@
 #include "pokemon.h"
+#include "pokemon.h"
 #include "pikachu.h"
 
 int main()
