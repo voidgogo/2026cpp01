@@ -1,7 +1,7 @@
 #pragma once
 #include "pokemon.h"
 
-class Pikachu : public Pokemon  // is-a
+class Pikachu final : public Pokemon  // is-a
 {
 private:
     int electricAttack;

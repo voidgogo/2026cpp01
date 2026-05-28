@@ -1,5 +1,5 @@
 #include "pokemon.h"
-#include "pokemon.h"
+#include "pokemon.h"  // duplicated code
 #include "pikachu.h"
 
 int main()
