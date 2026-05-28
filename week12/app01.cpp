@@ -52,9 +52,9 @@ public:
 };
 int main()
 {
-    //Pikachu Pikachu;   // default
-    //cout << Pikachu.getHp() << endl;
-    //cout << Pikachu.getElectricAttack();
+    //Pikachu pikachu;   // default
+    //cout << pikachu.getHp() << endl;
+    //cout << pikachu.getElectricAttack();
 
     Pikachu pikachu(500, 4000);  // parameter
     cout << pikachu.getHp() << endl;
